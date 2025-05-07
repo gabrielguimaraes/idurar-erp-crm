@@ -4,3 +4,7 @@ backend/.env
 .testRigor/test_cases
 .testRigor/retest.log
 .testRigor/all_test_cases.yaml
+
+**/CLAUDE.local.md
+backend/.env
+node_modules

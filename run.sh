@@ -1,16 +1,22 @@
 #!/bin/bash
 
-# Navigate to the backend directory and install dependencies
+echo ============================
+echo Starting backend setup...
+echo ============================
 cd backend
 
-# Run the backend server in the background
-npm run dev &
+echo Installing backend dependencies...
+npm install
+echo Starting backend server in new window...
+npm run start &
 
-# Go back to the root directory
 cd ..
+echo ============================
+echo Starting frontend setup...
+echo ============================
 
-# Navigate to the frontend directory and install dependencies
 cd frontend
-
-# Run the frontend server
+echo Installing frontend dependencies...
+npm install
+echo Starting frontend server...
 npm run dev
