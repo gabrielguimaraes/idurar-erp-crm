@@ -1,0 +1,11 @@
+
+> idurar-erp-crm@4.0.0 start
+> node src/server.js
+
+🚀 Mock MongoDB running at: mongodb://127.0.0.1:54354/
+👍 Admin created : Done!
+👍 Settings created : Done!
+👍 Taxes created : Done!
+👍 PaymentMode created : Done!
+🥳 Setup completed :Success!
+Express running → On PORT : 8888
