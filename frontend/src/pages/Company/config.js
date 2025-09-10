@@ -16,6 +16,7 @@ export const fields = {
     dataIndex: ['mainContact', 'firstname'],
   },
   country: {
+    required: true,
     type: 'country',
   },
   phone: {
