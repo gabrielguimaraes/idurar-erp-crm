@@ -20,6 +20,7 @@ const formItems = [
   {
     settingKey: 'company_country',
     valueType: 'string',
+    required: true,
   },
   {
     settingKey: 'company_email',
@@ -62,7 +63,7 @@ export default function SettingForm() {
             name={item.settingKey}
             rules={[
               {
-                required: false,
+                required: item.required || false,
               },
             ]}
             valuePropName={item.valueType === 'boolean' ? 'checked' : 'value'}

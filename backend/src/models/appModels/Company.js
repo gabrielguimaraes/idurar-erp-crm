@@ -115,9 +115,35 @@ const schema = new mongoose.Schema({
   postalCode: {
     type: Number,
   },
+  // TODO: Refactor country codes to use shared constants
+  // Currently duplicated in: backend/src/utils/countryList.js (125 countries),
+  // frontend/src/utils/countryList.js (187 countries), and this model (187 countries).
+  // Consider extracting to a shared constant module to maintain consistency.
   country: {
     type: String,
     trim: true,
+    required: [true, 'Please select a country'],
+    enum: {
+      values: [
+        'AF', 'AL', 'DZ', 'AD', 'AO', 'AI', 'AR', 'AM', 'AW', 'AU', 'AT', 'AZ',
+        'BS', 'BH', 'BD', 'BB', 'BY', 'BE', 'BZ', 'BJ', 'BM', 'BT', 'BO', 'BA',
+        'BW', 'BR', 'BN', 'BG', 'BF', 'BI', 'CV', 'KH', 'CM', 'CA', 'CF', 'TD',
+        'CL', 'CN', 'CO', 'KM', 'CD', 'CG', 'CR', 'HR', 'CU', 'CY', 'CZ', 'CI',
+        'DK', 'DJ', 'DM', 'DO', 'EC', 'EG', 'SV', 'ER', 'EE', 'SZ', 'ET', 'FJ',
+        'FI', 'FR', 'GA', 'GM', 'GE', 'DE', 'GH', 'GI', 'GR', 'GL', 'GP', 'GU',
+        'GT', 'GG', 'GN', 'GW', 'GY', 'HT', 'HN', 'HK', 'HU', 'IS', 'IN', 'ID',
+        'IR', 'IQ', 'IE', 'IL', 'IT', 'JM', 'JP', 'JO', 'KZ', 'KE', 'KP', 'KR',
+        'KW', 'KG', 'LV', 'LB', 'LS', 'LR', 'LY', 'LI', 'LT', 'LU', 'MG', 'MW',
+        'MY', 'MV', 'ML', 'MT', 'MQ', 'MR', 'MU', 'MX', 'MD', 'MC', 'MN', 'ME',
+        'MS', 'MA', 'MZ', 'MM', 'NA', 'NP', 'NL', 'NC', 'NZ', 'NI', 'NE', 'NG',
+        'NO', 'OM', 'PK', 'PS', 'PA', 'PG', 'PY', 'PE', 'PH', 'PL', 'PT', 'PR',
+        'QA', 'MK', 'RO', 'RU', 'RW', 'RE', 'SA', 'SN', 'RS', 'SG', 'SK', 'SI',
+        'SO', 'ZA', 'SS', 'ES', 'LK', 'SD', 'SR', 'SE', 'CH', 'SY', 'TW', 'TJ',
+        'TZ', 'TH', 'TL', 'TG', 'TO', 'TN', 'TR', 'TM', 'UG', 'UA', 'AE', 'GB',
+        'US', 'UY', 'UZ', 'VE', 'VN', 'YE', 'ZM', 'ZW'
+      ],
+      message: '{VALUE} is not a valid country code'
+    },
   },
   phone: {
     type: String,
