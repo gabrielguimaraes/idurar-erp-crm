@@ -13,7 +13,7 @@ const lang = {
   name: 'Name',
   email: 'Email',
   password: 'Password',
-  country: 'Country',
+  country: 'Current Country',
   afghanistan: 'Afghanistan',
   albania: 'Albania',
   algeria: 'Algeria',
